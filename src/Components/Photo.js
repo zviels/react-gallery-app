@@ -4,12 +4,12 @@ import React from 'react';
 
 // The Photo Component
 
-const Photo = () => {
+const Photo = ({ src, alt }) => {
 
     return (
 
         <li>
-            <img src="" alt=""></img>
+            <img src= { src } alt= { alt }></img>
         </li>
 
     )

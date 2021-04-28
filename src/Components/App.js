@@ -23,17 +23,23 @@ class App extends Component {
 
     // Initialize State
 
-    state = { data: [], loading: true }
+    state = { searchResults: [], cats: [], dogs: [], pandas: [], loading: true }
 
     // Methods
 
     // componentDidMount
 
-    componentDidMount = () => this.getData();
+    componentDidMount = () => {
+
+        this.getData();
+        this.getData('dogs');
+        this.getData('panda bears');
+
+    }
 
     // getData
 
-    getData = async (tags = 'kittens') => {
+    getData = async (tags = 'cats') => {
 
         try {
 
@@ -46,7 +52,17 @@ class App extends Component {
 
             // Update App State
 
-            this.setState({ data: photo, loading: false });
+            if (tags === 'cats')
+                this.setState({ cats: photo });
+              
+            else if (tags === 'dogs')
+                this.setState({ dogs: photo });
+                
+            else if (tags === 'panda bears')
+                this.setState({ pandas: photo });
+
+            else
+                this.setState({ searchResults: photo })
 
         } catch (error) {
 
@@ -67,16 +83,13 @@ class App extends Component {
                 <Nav />
                 <Switch>
                     <Route exact path="/">
-                        Kittens
-                        <Gallery />
+                        <Gallery data= { this.state.cats } />
                     </Route>
                     <Route path="/puppies">
-                        Puppies
-                        <Gallery />
+                        <Gallery data= { this.state.dogs } />
                     </Route>
                     <Route path="/pandas">
-                        Pandas
-                        <Gallery />
+                        <Gallery data= { this.state.pandas }  />
                     </Route>
                     <Route path="/search/:term">
                         <Gallery />
