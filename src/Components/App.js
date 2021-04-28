@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 // Import React Router Components
 
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // Import Components
 
@@ -27,6 +27,8 @@ class App extends Component {
 
     // Methods
 
+    // Lifecycle Methods
+
     // componentDidMount
 
     componentDidMount = () => {
@@ -36,6 +38,8 @@ class App extends Component {
         this.getData('panda bears');
 
     }
+
+    // Additional Methods
 
     // getData
 
@@ -72,6 +76,15 @@ class App extends Component {
 
     }
 
+    // Search
+
+    search = (term) => {
+
+        this.getData(term);
+        return <Redirect to='search/dolphins'></Redirect>
+
+    }
+
     // Render
 
     render = () => {
@@ -79,7 +92,7 @@ class App extends Component {
         return (
 
             <div className="container">
-                <SearchForm />
+                <SearchForm search= { this.search } />
                 <Nav />
                 <Switch>
                     <Route exact path="/">
@@ -92,7 +105,7 @@ class App extends Component {
                         <Gallery data= { this.state.pandas }  />
                     </Route>
                     <Route path="/search/:term">
-                        <Gallery />
+                        <Gallery data= { this.state.searchResults }/>
                     </Route>
                     <Route>
                         <NotFound />

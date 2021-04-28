@@ -11,10 +11,6 @@ import NoResults from './NoResults';
 
 class Gallery extends Component {
 
-    // Initialize State
-
-    state = { images: [] };
-
     // Methods
 
     // getPhotos
