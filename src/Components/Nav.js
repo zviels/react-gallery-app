@@ -2,6 +2,10 @@
 
 import React from 'react';
 
+// Import Navigation Link
+
+import { NavLink } from 'react-router-dom';
+
 // The Nav Component
 
 const Nav = () => {
@@ -11,13 +15,13 @@ const Nav = () => {
         <nav className="main-nav">
             <ul>
                 <li>
-                    <a href="#">Cats</a>
+                    <NavLink exact to="/">Cats</NavLink>
                 </li>
                 <li>
-                    <a href="#">Dogs</a>
+                    <NavLink to="/puppies">Dogs</NavLink>
                 </li>
                 <li>
-                    <a href="#">Dolphins</a>
+                    <NavLink to="/pandas">Pandas</NavLink>
                 </li>
             </ul>
         </nav>

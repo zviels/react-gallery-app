@@ -93,6 +93,17 @@ input {
   width: 100%;
 }
 
+.not-found {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+}
+
+.not-found .far {
+  font-size: 5em;
+}
+
 @media only screen and (max-width: 767px)  {
   body {
     padding-top: 2em;
