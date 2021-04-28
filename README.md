@@ -1,4 +1,23 @@
-# Getting Started with Create React App
+# React Gallery App
+
+For this project, I used the very popular React library to create an image gallery app.
+
+## Configuration File
+
+`config.js` file must be created inside the `API` folder.
+The `API` folder is located in the `src` folder.
+`config.js` should contain a Flickr API key. This key should be exported. 
+
+The `config.js` file should look something like this -
+
+```
+const apiKey = 'YOUR API KEY';
+export default apiKey;
+```
+
+Note that the `Flickr.js` file will import the API key from `config.js`.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

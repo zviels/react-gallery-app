@@ -15,7 +15,15 @@ class Gallery extends Component {
 
     state = { images: [] };
 
-    // The Render Method
+    // Methods
+
+    // getPhotos
+
+    getPhotos = () => {
+
+    }
+
+    // Render
 
     render = () => {
 
