@@ -18,7 +18,7 @@ const Nav = () => {
                     <NavLink exact to="/">Cats</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/puppies">Dogs</NavLink>
+                    <NavLink to="/dogs">Dogs</NavLink>
                 </li>
                 <li>
                     <NavLink to="/pandas">Pandas</NavLink>

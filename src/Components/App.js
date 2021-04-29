@@ -97,7 +97,7 @@ class App extends Component {
                     <Route exact path="/">
                         <Gallery data= { this.state.cats } loading= { this.state.loading } />
                     </Route>
-                    <Route path="/puppies">
+                    <Route path="/dogs">
                         <Gallery data= { this.state.dogs } loading= { this.state.loading } />
                     </Route>
                     <Route path="/pandas">
