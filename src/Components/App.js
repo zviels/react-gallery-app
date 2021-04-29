@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 // Import React Router Components
 
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 // Import Components
 
@@ -47,6 +47,8 @@ class App extends Component {
 
         try {
 
+            this.setState({ loading: true });
+            
             const { data } = await Flickr.get('/', { params: { tags } });
 
             // Extract The 'Photo' Array From The API Response
@@ -67,6 +69,8 @@ class App extends Component {
 
             else
                 this.setState({ searchResults: photo })
+
+            this.setState({ loading: false });    
 
         } catch (error) {
 
@@ -91,16 +95,16 @@ class App extends Component {
                 <Nav />
                 <Switch>
                     <Route exact path="/">
-                        <Gallery data= { this.state.cats } />
+                        <Gallery data= { this.state.cats } loading= { this.state.loading } />
                     </Route>
                     <Route path="/puppies">
-                        <Gallery data= { this.state.dogs } />
+                        <Gallery data= { this.state.dogs } loading= { this.state.loading } />
                     </Route>
                     <Route path="/pandas">
-                        <Gallery data= { this.state.pandas } />
+                        <Gallery data= { this.state.pandas } loading= { this.state.loading } />
                     </Route>
                     <Route path="/search/:term">
-                        <Gallery data= { this.state.searchResults } search= { this.search }/>
+                        <Gallery data= { this.state.searchResults } search= { this.search } loading= { this.state.loading } />
                     </Route>
                     <Route>
                         <NotFound />

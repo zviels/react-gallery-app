@@ -13,7 +13,7 @@ import NoResults from './NoResults';
 
 // The Gallery Component
 
-const Gallery = ({ data, search }) => {
+const Gallery = ({ data, search, loading }) => {
 
     // Hooks
 
@@ -77,7 +77,13 @@ const Gallery = ({ data, search }) => {
 
     const render = () => {
 
-        return (
+        if (loading)
+            return <h3>Loading...</h3>
+
+        else if (data.length === 0)
+            return <NoResults />
+
+        else return (
 
             <div className="photo-container">
                 <h2>Results</h2>
@@ -95,8 +101,6 @@ const Gallery = ({ data, search }) => {
     return render();
 
 }
-
-
 
 // Export Gallery
 
