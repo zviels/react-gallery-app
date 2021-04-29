@@ -78,12 +78,7 @@ class App extends Component {
 
     // Search
 
-    search = (term) => {
-
-        this.getData(term);
-        return <Redirect to='search/dolphins'></Redirect>
-
-    }
+    search = (term) => this.getData(term);
 
     // Render
 
@@ -102,10 +97,10 @@ class App extends Component {
                         <Gallery data= { this.state.dogs } />
                     </Route>
                     <Route path="/pandas">
-                        <Gallery data= { this.state.pandas }  />
+                        <Gallery data= { this.state.pandas } />
                     </Route>
                     <Route path="/search/:term">
-                        <Gallery data= { this.state.searchResults }/>
+                        <Gallery data= { this.state.searchResults } search= { this.search }/>
                     </Route>
                     <Route>
                         <NotFound />

@@ -1,6 +1,10 @@
 // Import React
 
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+
+// Import React Router Components
+
+import { useHistory, useParams } from 'react-router';
 
 // Import Components
 
@@ -9,15 +13,38 @@ import NoResults from './NoResults';
 
 // The Gallery Component
 
-class Gallery extends Component {
+const Gallery = ({ data, search }) => {
+
+    // Hooks
+
+    const { term } = useParams();
+    const history = useHistory();
 
     // Methods
 
+    // useEffect
+
+    useEffect(() => {
+
+        const { action } = history;
+
+        // If The Search Form Was Used, And The User Clicked On The 'Back' Or 'Forward' Buttons - Run The Search Function
+
+        if (term && action === 'POP') {
+
+            search(term);
+
+            // Prevent The Search Function From Running Repeatedly By Using The 'Replace' Action Instead Of The 'Pop' Action
+
+            history.replace('/search/' + term, data);
+
+        }
+            
+    });
+
     // getPhotos
 
-    getPhotos = () => {
-
-        const { data } = this.props;
+    const getPhotos = () => {
 
         const photos = data.map((object) => {
 
@@ -48,24 +75,28 @@ class Gallery extends Component {
 
     // Render
 
-    render = () => {
-        
-        const photos = this.getPhotos();
+    const render = () => {
 
         return (
 
             <div className="photo-container">
                 <h2>Results</h2>
                 <ul>
-                    { photos }
+                    { getPhotos() }
                 </ul>
             </div>
-
+    
         )
 
     }
 
+    // Call The Render Method
+
+    return render();
+
 }
+
+
 
 // Export Gallery
 
