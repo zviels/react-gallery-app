@@ -48,20 +48,14 @@ const Gallery = ({ data, search, loading }) => {
 
         const photos = data.map((object) => {
 
-            // The Starting URL Of Every Photo
+            // Extract The ID From Each Object
 
-            const baseURL = 'https://live.staticflickr.com';
-
-            // Extract Required Information From Each Object
-
-            const serverID = object.server;
             const key = object.id;
-            const { secret, title } = object;
 
             // Construct Photo Properties
 
-            const src = baseURL + '/' + serverID + '/' + key + '_' + secret + '_q.jpg';
-            const alt = title;
+            const src = object.images.original.url;
+            const alt = object.title;
 
             // Generate A Photo Component
 

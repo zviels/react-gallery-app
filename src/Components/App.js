@@ -15,7 +15,7 @@ import NotFound from './NotFound';
 
 // Import Flickr
 
-import Flickr from '../API/Flickr';
+import Giphy from '../API/Giphy';
 
 // The App Component
 
@@ -23,7 +23,7 @@ class App extends Component {
 
     // Initialize State
 
-    state = { searchResults: [], cats: [], dogs: [], pandas: [], loading: true }
+    state = { searchResults: [], cats: [], dogs: [], monkeys: [], loading: true }
 
     // Methods
 
@@ -35,7 +35,7 @@ class App extends Component {
 
         this.getData();
         this.getData('dogs');
-        this.getData('panda bears');
+        this.getData('monkeys');
 
     }
 
@@ -43,32 +43,28 @@ class App extends Component {
 
     // getData
 
-    getData = async (tags = 'cats') => {
+    getData = async (q = 'cats') => {
 
         try {
 
             this.setState({ loading: true });
             
-            const { data } = await Flickr.get('/', { params: { tags } });
-
-            // Extract The 'Photo' Array From The API Response
-
-            const { photos } = data;
-            const { photo } = photos;
+            const { data } = await Giphy.get('/search', { params: { q } });
+            console.log(data);
 
             // Update App State
 
-            if (tags === 'cats')
-                this.setState({ cats: photo });
+            if (q === 'cats')
+                this.setState({ cats: data.data });
               
-            else if (tags === 'dogs')
-                this.setState({ dogs: photo });
+            else if (q === 'dogs')
+                this.setState({ dogs: data.data });
                 
-            else if (tags === 'panda bears')
-                this.setState({ pandas: photo });
+            else if (q === 'monkeys')
+                this.setState({ monkeys: data.data });
 
             else
-                this.setState({ searchResults: photo })
+                this.setState({ searchResults: data.data })
 
             this.setState({ loading: false });    
 
@@ -82,7 +78,7 @@ class App extends Component {
 
     // Search
 
-    search = (term) => this.getData(term);
+    // search = (term) => this.getData(term);
 
     // Render
 
@@ -91,7 +87,7 @@ class App extends Component {
         return (
 
             <div className="container">
-                <SearchForm search= { this.search } />
+                <SearchForm search= { this.getData } />
                 <Nav />
                 <Switch>
                     <Route exact path="/">
@@ -100,11 +96,11 @@ class App extends Component {
                     <Route path="/dogs">
                         <Gallery data= { this.state.dogs } loading= { this.state.loading } />
                     </Route>
-                    <Route path="/pandas">
-                        <Gallery data= { this.state.pandas } loading= { this.state.loading } />
+                    <Route path="/monkeys">
+                        <Gallery data= { this.state.monkeys } loading= { this.state.loading } />
                     </Route>
                     <Route path="/search/:term">
-                        <Gallery data= { this.state.searchResults } search= { this.search } loading= { this.state.loading } />
+                        <Gallery data= { this.state.searchResults } search= { this.getData } loading= { this.state.loading } />
                     </Route>
                     <Route>
                         <NotFound />

@@ -10,14 +10,11 @@ import axios from 'axios';
 
 export default axios.create({
 
-    baseURL: 'https://www.flickr.com/services/rest/',
+    baseURL: 'https://api.giphy.com/v1/gifs/',
     params: {
 
-        method: 'flickr.photos.search',
         api_key: APIKey,
-        per_page: 24,
-        format: 'json',
-        nojsoncallback: 1
+        limit: 24
 
     }
 

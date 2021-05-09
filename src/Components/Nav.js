@@ -21,7 +21,7 @@ const Nav = () => {
                     <NavLink to="/dogs">Dogs</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/pandas">Pandas</NavLink>
+                    <NavLink to="/monkeys">Monkeys</NavLink>
                 </li>
             </ul>
         </nav>
