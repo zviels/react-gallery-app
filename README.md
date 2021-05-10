@@ -1,12 +1,43 @@
 # React Gallery App
 
-For this project, I used the very popular React library to create an image gallery app.
+A front end project I built for my portfolio during my studies at [Treehouse](https://teamtreehouse.com). For this project, I used the popular React library to create an image gallery app. With the help of React, I built the app in the style of modern single-page applications to keep it fast, modular and in sync with current web development trends.
 
-## Configuration File
+I learned about some of the best practices of working with React, like using JSX to write markup-like syntax directly in my JS files, and managing state in a container component that passes data down to reusable stateless components. Additionally, I got practice working with React supportive tools like the **Create React App** and **React Router** modules.
 
-`config.js` file must be created inside the `API` folder.
-The `API` folder is located in the `src` folder.
-`config.js` should contain a Flickr API key. This key should be exported. 
+Using the **Create React App** tool, I set up the initial project.
+
+Then I -
+
+- Used JavaScript and JSX to build out the gallery components in a modular fashion.
+- Used **React Router** to set up routes for three default topic pages and a search page.
+- Used **Axios** to fetch data from an API.
+- Used the fetched data to display images in my app.
+- Added logic to handle the search functionality of the project.
+
+## Table of Contents
+
+- [Preview](https://github.com/zviels/react-gallery-app#preview)
+- [Quick Start](https://github.com/zviels/react-gallery-app#quick-start)
+- [Overview](https://github.com/zviels/react-gallery-app#overview)
+- [Built With](https://github.com/zviels/react-gallery-app#built-with)
+- [Thanks](https://github.com/zviels/react-gallery-app#thanks)
+
+## Preview
+
+<a href="https://react-gallery-app-zviels.vercel.app">
+  <img src="https://deab9i1yeabp0.cloudfront.net/github/treehouse/react-gallery-app/react-gallery-app.gif" alt="App Preview" width="100%">
+</a>
+
+## Quick Start
+
+The easiest way to view the app is by clicking [here](https://react-gallery-app-zviels.vercel.app).
+
+If you wish to run this app locally on your machine, you'll have to - 
+
+- [Download the ZIP file](https://github.com/zviels/react-gallery-app/archive/refs/heads/main.zip), extract it and open the project folder in your favorite code editor.
+- Sign up for [Giphy](https://developers.giphy.com) and create an app to get an API key.
+- In your code editor, create a new file inside the `API` folder (which is located in the `src` folder). Name this file `config.js`.
+- Put your Giphy API in the `config.js` file. This key should be exported.
 
 The `config.js` file should look something like this -
 
@@ -15,75 +46,61 @@ const apiKey = 'YOUR API KEY';
 export default apiKey;
 ```
 
-Note that the `Flickr.js` file will import the API key from `config.js`.
+Note that the `Giphy.js` file will import the API key from `config.js`.
 
-## Getting Started with Create React App
+## Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+As mentioned above, I developed this app as part of my studies at [Treehouse](https://teamtreehouse.com). I participated in their [Techdegree](https://teamtreehouse.com/techdegree) program. In this section you can read about -
 
-## Available Scripts
+- The topics I learned before I started developing the app.
+- The requirements I had to meet to complete this project.
+- The rating the project received.
 
-In the project directory, you can run:
+### What Did I Learn?
 
-### `npm start`
+Here is what I learned before I started working on the project -
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React Basics <img src="https://img.shields.io/badge/-JS%20Course-3659a2" alt="JS Course">
+- React Components <img src="https://img.shields.io/badge/-JS%20Course-3659a2" alt="JS Course">
+- React Router Basics <img src="https://img.shields.io/badge/-JS%20Course-3659a2" alt="JS Course">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+I also learned how to - 
 
-### `npm test`
+- Use **Create React App**.
+- Use **React Context API**.
+- Fetch data in React.
+- Deploy a React app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Project Requirements
 
-### `npm run build`
+You can view the project requirements [here](https://deab9i1yeabp0.cloudfront.net/github/treehouse/react-gallery-app/project-requirements.jpg).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Note:** The original project I submitted for review used Flickr API. After submitting the project, I replaced Flickr API with Giphy API. I find this API easier to use and more engaging to the user. Moreover, the images provided by Giphy API are of better quality compared to the images provided by Flickr API.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Rating
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+There are two possible grades for each Techdegree project - "Meets Expectations" and "Exceeds Expectations".
 
-### `npm run eject`
+This project received the **"Exceeds Expectations"** rating.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+See the full project review [here](https://deab9i1yeabp0.cloudfront.net/github/treehouse/react-gallery-app/project-review.jpg).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+:100:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Built With
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- HTML
+- CSS
+- React
 
-## Learn More
+## Thanks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a href="https://teamtreehouse.com">
+  <img src="https://deab9i1yeabp0.cloudfront.net/github/treehouse/treehouse-logo.png" alt="Treehouse Logo" width="100%">
+</a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thanks to [Treehouse](https://teamtreehouse.com) for providing the starter CSS file for this project -
 
-### Code Splitting
+- `styles.css`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+In addition, a huge thank you to everyone who reviewed the project! :grinning:
