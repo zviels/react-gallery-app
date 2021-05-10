@@ -36,8 +36,8 @@ If you wish to run this app locally on your machine, you'll have to -
 
 - [Download the ZIP file](https://github.com/zviels/react-gallery-app/archive/refs/heads/main.zip), extract it and open the project folder in your favorite code editor.
 - Sign up for [Giphy](https://developers.giphy.com) and create an app to get an API key.
-- In your code editor, create a new file inside the `API` folder (which is located in the `src` folder). Name this file `config.js`.
-- Put your Giphy API in the `config.js` file. This key should be exported.
+- Create a new file inside the `API` folder (which is located in the `src` folder). Name this file `config.js`.
+- Put your Giphy API key in the `config.js` file. This key should be exported.
 
 The `config.js` file should look something like this -
 
@@ -99,8 +99,6 @@ See the full project review [here](https://deab9i1yeabp0.cloudfront.net/github/t
   <img src="https://deab9i1yeabp0.cloudfront.net/github/treehouse/treehouse-logo.png" alt="Treehouse Logo" width="100%">
 </a>
 
-Thanks to [Treehouse](https://teamtreehouse.com) for providing the starter CSS file for this project -
-
-- `styles.css`
+Thanks to [Treehouse](https://teamtreehouse.com) for providing the starter CSS file for this project (`styles.css`).
 
 In addition, a huge thank you to everyone who reviewed the project! :grinning:
